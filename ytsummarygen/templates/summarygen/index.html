@@ -1,0 +1,37 @@
+{% extends 'summarygen/base.html' %} {% block content %}
+<div class="max-w-3xl mx-auto mt-10">
+  <h1 class="text-3xl font-bold text-center mb-6">
+    YouTube Transcript Generator
+  </h1>
+  <form method="post" class="text-center mb-6">
+    {% csrf_token %}
+    <input
+      type="text"
+      name="video_url"
+      placeholder="Enter YouTube URL"
+      class="border p-2 w-2/3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+      required
+    />
+    <button
+      type="submit"
+      class="bg-blue-500 text-white p-2 rounded-lg ml-2 hover:bg-blue-600"
+    >
+      Generate Summary
+    </button>
+  </form>
+
+  {% if summary %}
+  <div class="bg-white p-4 rounded-lg shadow-md mb-4 scroll-box">
+    <h2 class="text-xl font-bold mb-2">Summary</h2>
+    <pre class="bg-gray-100 p-4 rounded whitespace-pre-wrap">{{ summary }}</pre>
+  </div>
+  {% endif %} {% if transcript_text %}
+  <div class="bg-white p-4 rounded-lg shadow-md scroll-box">
+    <h2 class="text-xl font-bold mb-2">Transcript</h2>
+    <pre class="bg-gray-100 p-4 rounded whitespace-pre-wrap">
+{{ transcript_text }}</pre
+    >
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
