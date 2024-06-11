@@ -6,7 +6,8 @@ import openai
 from django.conf import settings
 
 def generate_summary(transcript):
-    openai.api_key = settings.OPENAI_API_KEY
+    #openai.api_key = settings.OPENAI_API_KEY
+    openai.api_key = `${{ OPEN_API_KEY }}`
 
     headers = {
         "Content-Type": "application/json",
