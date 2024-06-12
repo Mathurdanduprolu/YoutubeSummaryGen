@@ -134,7 +134,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-CSRF_TRUSTED_ORIGINS = ['https://*.railway.app','https://*.127.0.0.1', 'https://ytsummary.pro', 'http://ytummary.pro']
+CSRF_TRUSTED_ORIGINS = ['https://*.railway.app','https://*.127.0.0.1', 'https://ytsummary.pro', 'http://ytummary.pro' , 'https://www.ytsummary.pro', 'http://www.ytsummary.pro']
 
 
 OPENAI_API_KEY= " "
