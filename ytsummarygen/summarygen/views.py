@@ -71,12 +71,13 @@ def index(request):
     if request.method == 'POST':
         video_url = request.POST.get('video_url')
         video_id = video_url.split('v=')[-1]
-        
+
         try:
             transcript = YouTubeTranscriptApi.get_transcript(video_id)
+            print("Transcript probably generated")
             transcript_text = ' '.join([entry['text'] for entry in transcript])
             summary = generate_summary(transcript_text)
         except Exception as e:
-            transcript_text = f"An error occurred: {e}"
+            transcript_text = f"LOG: An error occurred: {e}"
     
     return render(request, 'summarygen/index.html', {'transcript_text': transcript_text, 'summary': summary})
