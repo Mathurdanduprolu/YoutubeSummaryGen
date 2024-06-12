@@ -4,11 +4,16 @@ import requests
 import logging
 import openai 
 from django.conf import settings
+from dotenv import load_dotenv
+import os 
+
+load_dotenv()  # Load environment variables from a .env file
+
 
 def generate_summary(transcript):
     #openai.api_key = settings.OPENAI_API_KEY
-    openai.api_key = `${{ OPEN_API_KEY }}`
-
+    openai.api_key = os.getenv("OPEN_API_KEY")
+    
     headers = {
         "Content-Type": "application/json",
         "Authorization": f"Bearer {openai.api_key}"
