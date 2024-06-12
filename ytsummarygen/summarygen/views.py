@@ -29,23 +29,24 @@ def generate_summary(transcript):
             {
                 "role": "user",
                 "content": (
-                    f"Summarize the following transcript {transcript} in less than 1000 words in the following format:\n\n"
-                    f"Summary:\n"
-                    f"The transcript discusses the global concern revolving around employees being replaced by AI and the consequent need to learn and adapt to new skills. The speaker emphasises the necessity and benefits of reskilling programs in response to the rapid advancement of technology. Furthermore, the speaker highlights the remarkable efforts of the Singapore government's digital reskilling programs and implores individuals, companies, and governments to view these changes with curiosity and optimism.\n\n"
-                    f"Highlights:\n"
-                    f"🔹 AI and technology are significantly impacting jobs globally, with a third of workers likely to be affected this decade.\n"
-                    f"🔹 The demand for talent in fields like data science, cybersecurity, and clean energy is growing but the skillset of employees become redundant in as little as five years, pointing out the short \"half life of skills\".\n"
-                    f"🔹 Reskilling millions of people every year is the only effective solution to keep up with technology's rapid advancement.\n"
-                    f"🔹 The Singapore government's proactive approach towards reskilling programs serves as a powerful example for other countries.\n"
-                    f"🔹 The digital reskilling program \"Rise\" highlights the importance of not just technical skills but mindset and confidence.\n"
-                    f"🔹 Companies play a critical role in the reskilling revolution, as illustrated by Ikea's reskilling initiative following the launch of their AI bot, Billy.\n"
-                    f"🔹 Individuals have a personal responsibility to embrace lifelong learning and continually build their skills.\n\n"
-                    f"Key Insights:\n"
-                    f"🔑 The rapid advancement of technology requires individuals and companies to continually learn and adopt new skills.\n"
-                    f"🔑 Reskilling programs are a critical response to the technology-induced job market changes.\n"
-                    f"🔑 Apart from technical skills, reskilling initiatives should focus on building mindset and confidence.\n"
-                    f"🔑 Companies and governments have a significant role in managing technology-induced changes in the workforce.\n"
-                    f"🔑 Individuals have a personal responsibility to continually adopt new skills and maintain a lifelong learning approach."
+                    f"""
+    Please summarize the following transcript in the specified format:
+
+    Transcript:
+    {transcript}
+
+    Format:
+    ### Summary
+    Provide a brief overview of the main points discussed in the transcript. Don't specifiy its a trascript again. Just go with the summary. Speficy if the name of the speaker if you have that info. 
+
+    ### Highlights
+    Use bullet points with emojis to highlight the key points and important moments. Each point highlight by highlight emoji
+
+    ### Key Insights
+    Provide a detailed analysis of the main insights, including implications and importance of the discussed topics. Each point hightlighted by key emoji
+
+    Now, provide the summary, highlights, and key insights in the specified format.
+    """
                 )
             }
         ],
